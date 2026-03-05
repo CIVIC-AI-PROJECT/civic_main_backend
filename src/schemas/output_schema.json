@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["recommended_office", "alternatives", "checklist", "conversation_script", "privacy", "metadata"],
+  "properties": {
+    "recommended_office": {
+      "type": "object",
+      "required": ["name", "address", "distance_km", "explanation"],
+      "properties": {
+        "name": {"type": "string"},
+        "address": {"type": "string"},
+        "distance_km": {"type": "number"},
+        "phone": {"type": "string"},
+        "hours": {"type": "string"},
+        "explanation": {"type": "string"}
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "address", "distance_km"],
+        "properties": {
+          "name": {"type": "string"},
+          "address": {"type": "string"},
+          "distance_km": {"type": "number"},
+          "phone": {"type": "string"},
+          "hours": {"type": "string"}
+        }
+      }
+    },
+    "checklist": {
+      "type": "object",
+      "required": ["documents", "steps"],
+      "properties": {
+        "documents": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "steps": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "conversation_script": {
+      "type": "object",
+      "required": ["opening", "follow_ups"],
+      "properties": {
+        "opening": {"type": "string"},
+        "follow_ups": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "required": ["stored", "not_stored"],
+      "properties": {
+        "stored": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "not_stored": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["correlation_id", "bedrock_used"],
+      "properties": {
+        "correlation_id": {"type": "string"},
+        "bedrock_used": {"type": "boolean"},
+        "processing_time_ms": {"type": "number"}
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["problem", "city"],
+  "properties": {
+    "problem": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1000,
+      "description": "User's civic problem description"
+    },
+    "city": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100,
+      "description": "City name for office search"
+    },
+    "latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Optional latitude in decimal degrees"
+    },
+    "longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Optional longitude in decimal degrees"
+    }
+  },
+  "additionalProperties": false
+}

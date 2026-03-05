@@ -1,0 +1,122 @@
+[
+  {
+    "office_id": "office-001",
+    "office_type": "city_hall",
+    "name": "Seattle City Hall",
+    "address": "600 4th Ave, Seattle, WA 98104",
+    "latitude": 47.6042,
+    "longitude": -122.3301,
+    "city": "Seattle",
+    "category_tags": ["permits", "licenses", "business", "general"],
+    "hours": "Mon-Fri 8:00 AM - 5:00 PM",
+    "phone": "(206) 684-8888"
+  },
+  {
+    "office_id": "office-002",
+    "office_type": "dmv",
+    "name": "Seattle DMV - Downtown",
+    "address": "908 E John St, Seattle, WA 98102",
+    "latitude": 47.6189,
+    "longitude": -122.3208,
+    "city": "Seattle",
+    "category_tags": ["licenses", "transportation"],
+    "hours": "Tue-Sat 9:00 AM - 4:30 PM",
+    "phone": "(360) 902-3900"
+  },
+  {
+    "office_id": "office-003",
+    "office_type": "tax_office",
+    "name": "King County Treasury Operations",
+    "address": "500 4th Ave, Seattle, WA 98104",
+    "latitude": 47.6033,
+    "longitude": -122.3295,
+    "city": "Seattle",
+    "category_tags": ["taxes", "property"],
+    "hours": "Mon-Fri 8:30 AM - 4:30 PM",
+    "phone": "(206) 263-2890"
+  },
+  {
+    "office_id": "office-004",
+    "office_type": "vital_records",
+    "name": "King County Vital Records",
+    "address": "401 5th Ave, Seattle, WA 98104",
+    "latitude": 47.6044,
+    "longitude": -122.3287,
+    "city": "Seattle",
+    "category_tags": ["vital_records"],
+    "hours": "Mon-Fri 8:30 AM - 4:30 PM",
+    "phone": "(206) 296-4769"
+  },
+  {
+    "office_id": "office-005",
+    "office_type": "health_department",
+    "name": "Seattle-King County Public Health",
+    "address": "401 5th Ave, Seattle, WA 98104",
+    "latitude": 47.6044,
+    "longitude": -122.3287,
+    "city": "Seattle",
+    "category_tags": ["health", "business"],
+    "hours": "Mon-Fri 8:00 AM - 5:00 PM",
+    "phone": "(206) 263-9566"
+  },
+  {
+    "office_id": "office-006",
+    "office_type": "city_hall",
+    "name": "Portland City Hall",
+    "address": "1221 SW 4th Ave, Portland, OR 97204",
+    "latitude": 45.5152,
+    "longitude": -122.6784,
+    "city": "Portland",
+    "category_tags": ["permits", "licenses", "business", "general"],
+    "hours": "Mon-Fri 8:00 AM - 5:00 PM",
+    "phone": "(503) 823-4000"
+  },
+  {
+    "office_id": "office-007",
+    "office_type": "dmv",
+    "name": "Portland DMV Office",
+    "address": "1505 SW 1st Ave, Portland, OR 97201",
+    "latitude": 45.5089,
+    "longitude": -122.6784,
+    "city": "Portland",
+    "category_tags": ["licenses", "transportation"],
+    "hours": "Tue-Sat 9:00 AM - 5:00 PM",
+    "phone": "(503) 945-5000"
+  },
+  {
+    "office_id": "office-008",
+    "office_type": "tax_office",
+    "name": "Multnomah County Tax Office",
+    "address": "501 SE Hawthorne Blvd, Portland, OR 97214",
+    "latitude": 45.5122,
+    "longitude": -122.6587,
+    "city": "Portland",
+    "category_tags": ["taxes", "property"],
+    "hours": "Mon-Fri 8:00 AM - 5:00 PM",
+    "phone": "(503) 988-3326"
+  },
+  {
+    "office_id": "office-009",
+    "office_type": "vital_records",
+    "name": "Oregon Vital Records",
+    "address": "800 NE Oregon St, Portland, OR 97232",
+    "latitude": 45.5311,
+    "longitude": -122.6564,
+    "city": "Portland",
+    "category_tags": ["vital_records"],
+    "hours": "Mon-Fri 8:00 AM - 4:30 PM",
+    "phone": "(971) 673-1190"
+  },
+  {
+    "office_id": "office-010",
+    "office_type": "business_office",
+    "name": "Portland Business License Office",
+    "address": "111 SW Columbia St, Portland, OR 97201",
+    "latitude": 45.5145,
+    "longitude": -122.6789,
+    "city": "Portland",
+    "category_tags": ["business", "licenses"],
+    "hours": "Mon-Fri 9:00 AM - 4:00 PM",
+    "phone": "(503) 823-7082"
+  }
+]

@@ -1,0 +1,252 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Kiro Backend Civic Assistant - Serverless API
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 512
+    Runtime: python3.11
+    Environment:
+      Variables:
+        POWERTOOLS_SERVICE_NAME: kiro-backend
+        LOG_LEVEL: INFO
+
+Resources:
+  # API Gateway
+  CivicAssistantApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      Cors:
+        AllowMethods: "'POST, OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Correlation-Id'"
+        AllowOrigin: "'*'"
+      
+
+  # Amazon Location Service PlaceIndex
+  CivicAssistantPlaceIndex:
+    Type: AWS::Location::PlaceIndex
+    Properties:
+      IndexName: CivicAssistantPlaceIndex
+      DataSource: Esri
+      PricingPlan: RequestBasedUsage
+      Description: Place index for geocoding city names in civic assistant
+
+  # Lambda Function
+  CivicAssistantFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: src/lambda_handler.lambda_handler
+      Description: Main handler for civic assistant requests
+      Environment:
+        Variables:
+          PLACE_INDEX_NAME: !Ref CivicAssistantPlaceIndex
+          OFFICES_TABLE_NAME: !Ref OfficesTable
+          TEMPLATES_TABLE_NAME: !Ref TemplatesTable
+          SESSION_LOG_TABLE_NAME: !Ref SessionLog
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OfficesTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref TemplatesTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref SessionLog
+        - Statement:
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+              Resource: 
+                - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/anthropic.claude-3-haiku-20240307-v1:0'
+            - Effect: Allow
+              Action:
+                - geo:SearchPlaceIndexForText
+                - geo:SearchPlaceIndexForPosition
+              Resource: !GetAtt CivicAssistantPlaceIndex.Arn
+            - Effect: Allow
+              Action:
+                - kms:Decrypt
+                - kms:Encrypt
+                - kms:GenerateDataKey
+              Resource:
+                - !GetAtt OfficesTableKey.Arn
+                - !GetAtt TemplatesTableKey.Arn
+                - !GetAtt SessionLogKey.Arn
+      Events:
+        CivicAssist:
+          Type: Api
+          Properties:
+            RestApiId: !Ref CivicAssistantApi
+            Path: /civic-assist
+            Method: POST
+
+  # KMS Keys for encryption at rest
+  OfficesTableKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: KMS key for OfficesTable encryption
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+          - Sid: Allow Lambda to use the key
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action:
+              - 'kms:Decrypt'
+              - 'kms:Encrypt'
+              - 'kms:GenerateDataKey'
+            Resource: '*'
+
+  TemplatesTableKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: KMS key for TemplatesTable encryption
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+          - Sid: Allow Lambda to use the key
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action:
+              - 'kms:Decrypt'
+              - 'kms:Encrypt'
+              - 'kms:GenerateDataKey'
+            Resource: '*'
+
+  SessionLogKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: KMS key for SessionLog encryption
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+          - Sid: Allow Lambda to use the key
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action:
+              - 'kms:Decrypt'
+              - 'kms:Encrypt'
+              - 'kms:GenerateDataKey'
+            Resource: '*'
+
+  # DynamoDB Tables
+  OfficesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: OfficesTable
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+        KMSMasterKeyId: !Ref OfficesTableKey
+      AttributeDefinitions:
+        - AttributeName: office_id
+          AttributeType: S
+        - AttributeName: city
+          AttributeType: S
+      KeySchema:
+        - AttributeName: office_id
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: city-index
+          KeySchema:
+            - AttributeName: city
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+
+  TemplatesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: TemplatesTable
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+        KMSMasterKeyId: !Ref TemplatesTableKey
+      AttributeDefinitions:
+        - AttributeName: category
+          AttributeType: S
+      KeySchema:
+        - AttributeName: category
+          KeyType: HASH
+
+  SessionLog:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: SessionLog
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+        KMSMasterKeyId: !Ref SessionLogKey
+      AttributeDefinitions:
+        - AttributeName: session_id
+          AttributeType: S
+        - AttributeName: timestamp
+          AttributeType: S
+      KeySchema:
+        - AttributeName: session_id
+          KeyType: HASH
+        - AttributeName: timestamp
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+
+  # CloudWatch Log Group
+  CivicAssistantLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${CivicAssistantFunction}'
+      RetentionInDays: 30
+
+Outputs:
+  ApiEndpoint:
+    Description: API Gateway endpoint URL
+    Value: !Sub 'https://${CivicAssistantApi}.execute-api.${AWS::Region}.amazonaws.com/prod/civic-assist'
+  
+  FunctionArn:
+    Description: Lambda Function ARN
+    Value: !GetAtt CivicAssistantFunction.Arn
+  
+  PlaceIndexName:
+    Description: Amazon Location Service PlaceIndex Name
+    Value: !Ref CivicAssistantPlaceIndex
+  
+  OfficesTableName:
+    Description: DynamoDB Offices Table Name
+    Value: !Ref OfficesTable
+  
+  TemplatesTableName:
+    Description: DynamoDB Templates Table Name
+    Value: !Ref TemplatesTable
+  
+  SessionLogTableName:
+    Description: DynamoDB SessionLog Table Name
+    Value: !Ref SessionLog

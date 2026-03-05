@@ -1,0 +1,162 @@
+[
+  {
+    "category": "permits",
+    "documents": [
+      "Government-issued photo ID (Aadhaar, Passport, or Driver's License)",
+      "Proof of address (utility bill, rental agreement)",
+      "Property ownership documents or NOC from owner",
+      "Site plan and building drawings (if applicable)",
+      "Payment receipt or demand draft"
+    ],
+    "steps": [
+      "Gather all required documents listed above",
+      "Make photocopies of all documents",
+      "Fill out the permit application form (available at office or online)",
+      "Arrive during business hours to avoid long queues",
+      "Be prepared to pay applicable fees"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "licenses",
+    "documents": [
+      "Government-issued photo ID (Aadhaar, Passport, or Voter ID)",
+      "Proof of address (recent utility bill or bank statement)",
+      "Passport-size photographs (4-6 copies)",
+      "Medical certificate (if required for driving license)",
+      "Previous license copy (for renewal)"
+    ],
+    "steps": [
+      "Check specific requirements for your license type online",
+      "Complete the application form before visiting",
+      "Bring original documents plus photocopies",
+      "Arrive early to avoid crowds",
+      "Keep payment ready (cash or card as accepted)"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "taxes",
+    "documents": [
+      "PAN card (mandatory for tax matters)",
+      "Aadhaar card",
+      "Previous year's tax returns (if applicable)",
+      "Property tax receipts or assessment documents",
+      "Bank account details for refunds"
+    ],
+    "steps": [
+      "Organize all tax-related documents chronologically",
+      "Calculate estimated tax liability beforehand",
+      "Bring copies of previous correspondence with tax office",
+      "Note down your assessment number or property ID",
+      "Be prepared to explain your tax query clearly"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "vital_records",
+    "documents": [
+      "Government-issued photo ID (Aadhaar, Passport, or Voter ID)",
+      "Proof of relationship (if requesting someone else's records)",
+      "Birth/Death/Marriage certificate (if available)",
+      "Hospital records or affidavit (for birth/death certificates)",
+      "Application form duly filled"
+    ],
+    "steps": [
+      "Determine which vital record you need",
+      "Check if online application is available",
+      "Bring original ID documents plus photocopies",
+      "Have exact details (dates, names, registration numbers)",
+      "Be patient as processing may take time"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "property",
+    "documents": [
+      "Property ownership documents (sale deed, registry)",
+      "Property tax receipts",
+      "Government-issued photo ID",
+      "Proof of address",
+      "NOC from society or previous owner (if applicable)"
+    ],
+    "steps": [
+      "Verify property details and boundaries beforehand",
+      "Bring complete chain of ownership documents",
+      "Get property survey done if required",
+      "Prepare list of questions about property regulations",
+      "Consider bringing a legal advisor for complex matters"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "business",
+    "documents": [
+      "Business registration documents",
+      "PAN card and Aadhaar of proprietor/partners",
+      "Proof of business address (rent agreement, NOC)",
+      "Partnership deed or MOA/AOA (for companies)",
+      "GST registration certificate (if applicable)"
+    ],
+    "steps": [
+      "Prepare business plan summary",
+      "Organize all incorporation documents",
+      "Bring bank account details and cancelled cheque",
+      "Have digital copies on phone/laptop as backup",
+      "Be ready to explain your business activities"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "health",
+    "documents": [
+      "Government-issued photo ID",
+      "Health insurance card (if applicable)",
+      "Medical records or prescriptions",
+      "Vaccination records (for health certificates)",
+      "Proof of address"
+    ],
+    "steps": [
+      "List all health concerns or requirements",
+      "Bring previous medical reports if relevant",
+      "Check if appointment is required",
+      "Arrive early for medical examinations",
+      "Bring payment for any fees or tests"
+    ],
+    "script_style": "casual"
+  },
+  {
+    "category": "transportation",
+    "documents": [
+      "Driver's license or learner's permit",
+      "Vehicle registration certificate (RC)",
+      "Insurance documents",
+      "Pollution Under Control (PUC) certificate",
+      "Address proof and ID proof"
+    ],
+    "steps": [
+      "Check vehicle documents are up to date",
+      "Bring original documents plus photocopies",
+      "Have vehicle number and chassis number ready",
+      "Check if online slot booking is available",
+      "Keep payment ready for fees"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "general",
+    "documents": [
+      "Government-issued photo ID (Aadhaar, Passport, or Driver's License)",
+      "Proof of address (utility bill, rental agreement, or bank statement)",
+      "Any relevant supporting documents for your query"
+    ],
+    "steps": [
+      "Clearly identify what service or information you need",
+      "Bring all relevant documents you think might be needed",
+      "Arrive during business hours",
+      "Be prepared to explain your situation",
+      "Ask for written confirmation or receipt"
+    ],
+    "script_style": "casual"
+  }
+]

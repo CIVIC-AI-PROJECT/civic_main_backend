@@ -1,0 +1,84 @@
+[
+  {
+    "category": "permits",
+    "documents": [
+      "Government-issued photo ID",
+      "Property deed or proof of ownership",
+      "Building plans or blueprints",
+      "Site survey or plot plan"
+    ],
+    "steps": [
+      "Review local zoning requirements",
+      "Prepare detailed building plans",
+      "Gather all property documentation",
+      "Schedule a pre-application meeting if needed",
+      "Submit application with all required documents"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "licenses",
+    "documents": [
+      "Current driver's license or ID",
+      "Proof of residency (utility bill, lease agreement)",
+      "Social Security card",
+      "Payment method (check, credit card)"
+    ],
+    "steps": [
+      "Check renewal requirements online",
+      "Gather required identification documents",
+      "Complete any required tests or forms",
+      "Bring payment for fees",
+      "Arrive early to avoid long wait times"
+    ],
+    "script_style": "casual"
+  },
+  {
+    "category": "taxes",
+    "documents": [
+      "Property tax statement or parcel number",
+      "Government-issued ID",
+      "Payment method",
+      "Previous year's tax records (if applicable)"
+    ],
+    "steps": [
+      "Locate your property tax account number",
+      "Review current balance and due dates",
+      "Prepare payment information",
+      "Ask about payment plan options if needed"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "vital_records",
+    "documents": [
+      "Government-issued photo ID",
+      "Proof of relationship (if requesting someone else's record)",
+      "Payment for certified copies",
+      "Completed application form"
+    ],
+    "steps": [
+      "Determine which vital record you need",
+      "Complete the application form online or in person",
+      "Bring valid identification",
+      "Be prepared to pay fees for certified copies",
+      "Allow processing time for requests"
+    ],
+    "script_style": "formal"
+  },
+  {
+    "category": "general",
+    "documents": [
+      "Government-issued photo ID",
+      "Proof of address",
+      "Any relevant documentation for your request"
+    ],
+    "steps": [
+      "Bring all relevant documents",
+      "Arrive during business hours",
+      "Be prepared to explain your situation",
+      "Ask questions if you're unsure about requirements"
+    ],
+    "script_style": "casual"
+  }
+]

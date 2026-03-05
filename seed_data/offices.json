@@ -1,0 +1,304 @@
+[
+  {
+    "office_id": "delhi-001",
+    "office_type": "municipal_corporation",
+    "name": "North Delhi Municipal Corporation Office",
+    "address": "Civic Centre, Minto Road, New Delhi, Delhi 110002",
+    "latitude": 28.6289,
+    "longitude": 77.2065,
+    "city": "delhi",
+    "category_tags": [
+      "permits",
+      "property",
+      "taxes"
+    ],
+    "hours": "Mon-Fri 9:30am-5:30pm",
+    "phone": "+91-11-23221111"
+  },
+  {
+    "office_id": "delhi-002",
+    "office_type": "rto",
+    "name": "Delhi RTO Office - Kashmere Gate",
+    "address": "Transport Bhawan, Kashmere Gate, Delhi 110006",
+    "latitude": 28.6692,
+    "longitude": 77.2289,
+    "city": "delhi",
+    "category_tags": [
+      "licenses",
+      "transportation"
+    ],
+    "hours": "Mon-Sat 10:00am-5:00pm",
+    "phone": "+91-11-23865000"
+  },
+  {
+    "office_id": "delhi-003",
+    "office_type": "tehsil_office",
+    "name": "Tehsil Office - Saket",
+    "address": "District Court Complex, Saket, New Delhi 110017",
+    "latitude": 28.5244,
+    "longitude": 77.2066,
+    "city": "delhi",
+    "category_tags": [
+      "vital_records",
+      "property"
+    ],
+    "hours": "Mon-Fri 10:00am-5:00pm",
+    "phone": "+91-11-26854321"
+  },
+  {
+    "office_id": "delhi-004",
+    "office_type": "health_department",
+    "name": "Delhi Health Department - Connaught Place",
+    "address": "Nirman Bhawan, Maulana Azad Road, New Delhi 110011",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "city": "delhi",
+    "category_tags": [
+      "health",
+      "licenses"
+    ],
+    "hours": "Mon-Fri 9:00am-5:00pm",
+    "phone": "+91-11-23061502"
+  },
+  {
+    "office_id": "delhi-005",
+    "office_type": "business_registration",
+    "name": "Delhi Business Registration Office - Dwarka",
+    "address": "Sector 10, Dwarka, New Delhi 110075",
+    "latitude": 28.5921,
+    "longitude": 77.046,
+    "city": "delhi",
+    "category_tags": [
+      "business",
+      "licenses"
+    ],
+    "hours": "Mon-Fri 10:00am-6:00pm",
+    "phone": "+91-11-25082000"
+  },
+  {
+    "office_id": "delhi-006",
+    "office_type": "tax_office",
+    "name": "Income Tax Office - Laxmi Nagar",
+    "address": "Vikas Bhawan, Laxmi Nagar, Delhi 110092",
+    "latitude": 28.6369,
+    "longitude": 77.2773,
+    "city": "delhi",
+    "category_tags": [
+      "taxes"
+    ],
+    "hours": "Mon-Fri 9:30am-5:30pm",
+    "phone": "+91-11-22370000"
+  },
+  {
+    "office_id": "delhi-007",
+    "office_type": "building_permit",
+    "name": "Delhi Development Authority - Vikas Sadan",
+    "address": "Vikas Sadan, INA, New Delhi 110023",
+    "latitude": 28.5678,
+    "longitude": 77.2167,
+    "city": "delhi",
+    "category_tags": [
+      "permits",
+      "property"
+    ],
+    "hours": "Mon-Fri 9:00am-5:00pm",
+    "phone": "+91-11-24617000"
+  },
+  {
+    "office_id": "delhi-008",
+    "office_type": "police_station",
+    "name": "Delhi Police Headquarters - ITO",
+    "address": "ITO, New Delhi 110002",
+    "latitude": 28.6289,
+    "longitude": 77.2482,
+    "city": "delhi",
+    "category_tags": [
+      "general",
+      "vital_records"
+    ],
+    "hours": "24/7",
+    "phone": "+91-11-23490000"
+  },
+  {
+    "office_id": "delhi-009",
+    "office_type": "passport_office",
+    "name": "Passport Seva Kendra - Dwarka",
+    "address": "Sector 3, Dwarka, New Delhi 110078",
+    "latitude": 28.582,
+    "longitude": 77.046,
+    "city": "delhi",
+    "category_tags": [
+      "vital_records"
+    ],
+    "hours": "Mon-Sat 9:00am-5:00pm",
+    "phone": "+91-11-26782000"
+  },
+  {
+    "office_id": "delhi-010",
+    "office_type": "municipal_ward",
+    "name": "South Delhi Municipal Corporation - Nehru Place",
+    "address": "Nehru Place, New Delhi 110019",
+    "latitude": 28.5494,
+    "longitude": 77.2501,
+    "city": "delhi",
+    "category_tags": [
+      "permits",
+      "property",
+      "taxes",
+      "general"
+    ],
+    "hours": "Mon-Fri 9:30am-5:30pm",
+    "phone": "+91-11-26222000"
+  },
+  {
+    "office_id": "chandigarh-001",
+    "office_type": "municipal_corporation",
+    "name": "Chandigarh Municipal Corporation",
+    "address": "Sector 17-B, Chandigarh 160017",
+    "latitude": 30.741,
+    "longitude": 76.7791,
+    "city": "chandigarh",
+    "category_tags": [
+      "permits",
+      "property",
+      "taxes"
+    ],
+    "hours": "Mon-Fri 9:00am-5:00pm",
+    "phone": "+91-172-2707000"
+  },
+  {
+    "office_id": "chandigarh-002",
+    "office_type": "rto",
+    "name": "Chandigarh RTO Office - Sector 17",
+    "address": "Sector 17-C, Chandigarh 160017",
+    "latitude": 30.742,
+    "longitude": 76.782,
+    "city": "chandigarh",
+    "category_tags": [
+      "licenses",
+      "transportation"
+    ],
+    "hours": "Mon-Sat 9:30am-5:00pm",
+    "phone": "+91-172-2740000"
+  },
+  {
+    "office_id": "chandigarh-003",
+    "office_type": "sub_registrar",
+    "name": "Sub Registrar Office - Sector 34",
+    "address": "Sector 34-A, Chandigarh 160034",
+    "latitude": 30.7267,
+    "longitude": 76.7633,
+    "city": "chandigarh",
+    "category_tags": [
+      "vital_records",
+      "property"
+    ],
+    "hours": "Mon-Fri 10:00am-5:00pm",
+    "phone": "+91-172-2660000"
+  },
+  {
+    "office_id": "chandigarh-004",
+    "office_type": "health_department",
+    "name": "Chandigarh Health Department - Sector 9",
+    "address": "Sector 9-D, Chandigarh 160009",
+    "latitude": 30.75,
+    "longitude": 76.8,
+    "city": "chandigarh",
+    "category_tags": [
+      "health",
+      "licenses"
+    ],
+    "hours": "Mon-Fri 9:00am-5:00pm",
+    "phone": "+91-172-2740122"
+  },
+  {
+    "office_id": "chandigarh-005",
+    "office_type": "business_registration",
+    "name": "Chandigarh Industries Office - Sector 17",
+    "address": "UT Secretariat, Sector 9, Chandigarh 160009",
+    "latitude": 30.7533,
+    "longitude": 76.7733,
+    "city": "chandigarh",
+    "category_tags": [
+      "business",
+      "licenses"
+    ],
+    "hours": "Mon-Fri 9:30am-5:30pm",
+    "phone": "+91-172-2740200"
+  },
+  {
+    "office_id": "chandigarh-006",
+    "office_type": "tax_office",
+    "name": "Income Tax Office - Sector 17",
+    "address": "Sector 17-E, Chandigarh 160017",
+    "latitude": 30.74,
+    "longitude": 76.785,
+    "city": "chandigarh",
+    "category_tags": [
+      "taxes"
+    ],
+    "hours": "Mon-Fri 9:30am-5:30pm",
+    "phone": "+91-172-2700000"
+  },
+  {
+    "office_id": "chandigarh-007",
+    "office_type": "building_permit",
+    "name": "Chandigarh Estate Office - Sector 17",
+    "address": "Sector 17-B, Chandigarh 160017",
+    "latitude": 30.7415,
+    "longitude": 76.78,
+    "city": "chandigarh",
+    "category_tags": [
+      "permits",
+      "property"
+    ],
+    "hours": "Mon-Fri 9:00am-5:00pm",
+    "phone": "+91-172-2740300"
+  },
+  {
+    "office_id": "chandigarh-008",
+    "office_type": "police_station",
+    "name": "Chandigarh Police Headquarters - Sector 9",
+    "address": "Sector 9-D, Chandigarh 160009",
+    "latitude": 30.751,
+    "longitude": 76.801,
+    "city": "chandigarh",
+    "category_tags": [
+      "general",
+      "vital_records"
+    ],
+    "hours": "24/7",
+    "phone": "+91-172-2740000"
+  },
+  {
+    "office_id": "chandigarh-009",
+    "office_type": "passport_office",
+    "name": "Passport Seva Kendra - Sector 34",
+    "address": "Sector 34-A, Chandigarh 160034",
+    "latitude": 30.727,
+    "longitude": 76.764,
+    "city": "chandigarh",
+    "category_tags": [
+      "vital_records"
+    ],
+    "hours": "Mon-Sat 9:00am-5:00pm",
+    "phone": "+91-172-2660100"
+  },
+  {
+    "office_id": "chandigarh-010",
+    "office_type": "municipal_ward",
+    "name": "Chandigarh Administration - Sector 9",
+    "address": "UT Secretariat, Sector 9, Chandigarh 160009",
+    "latitude": 30.753,
+    "longitude": 76.773,
+    "city": "chandigarh",
+    "category_tags": [
+      "permits",
+      "property",
+      "taxes",
+      "general"
+    ],
+    "hours": "Mon-Fri 9:00am-5:00pm",
+    "phone": "+91-172-2740000"
+  }
+]
