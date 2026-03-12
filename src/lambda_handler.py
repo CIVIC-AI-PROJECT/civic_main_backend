@@ -76,7 +76,12 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             print(f"[{correlation_id}] Validation failed: {validation_result.error_message}")
             return {
                 'statusCode': 400,
-                'headers': {'Content-Type': 'application/json'},
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': 'Content-Type,X-Correlation-Id',
+                    'Access-Control-Allow-Methods': 'POST,OPTIONS'
+                },
                 'body': json.dumps(response_builder.build_error_response(
                     error_type='validation_error',
                     message=validation_result.error_message,
@@ -107,7 +112,12 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 print(f"[{correlation_id}] Geocoding failed: {e}")
                 return {
                     'statusCode': 404,
-                    'headers': {'Content-Type': 'application/json'},
+                    'headers': {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Headers': 'Content-Type,X-Correlation-Id',
+                        'Access-Control-Allow-Methods': 'POST,OPTIONS'
+                    },
                     'body': json.dumps(response_builder.build_error_response(
                         error_type='not_found',
                         message=f"Could not find city: {city}. Please check the spelling or try a nearby city.",
@@ -122,7 +132,12 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             print(f"[{correlation_id}] No offices found for {city}")
             return {
                 'statusCode': 404,
-                'headers': {'Content-Type': 'application/json'},
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': 'Content-Type,X-Correlation-Id',
+                    'Access-Control-Allow-Methods': 'POST,OPTIONS'
+                },
                 'body': json.dumps(response_builder.build_error_response(
                     error_type='not_found',
                     message=f"No offices found in {city}. Please try a different city.",
@@ -194,7 +209,10 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'statusCode': 200,
             'headers': {
                 'Content-Type': 'application/json',
-                'X-Correlation-Id': correlation_id
+                'X-Correlation-Id': correlation_id,
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type,X-Correlation-Id',
+                'Access-Control-Allow-Methods': 'POST,OPTIONS'
             },
             'body': json.dumps(response)
         }
@@ -206,7 +224,12 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         
         return {
             'statusCode': 500,
-            'headers': {'Content-Type': 'application/json'},
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type,X-Correlation-Id',
+                'Access-Control-Allow-Methods': 'POST,OPTIONS'
+            },
             'body': json.dumps(response_builder.build_error_response(
                 error_type='internal_error',
                 message='An internal error occurred. Please try again later.',
